@@ -1,0 +1,211 @@
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f4f7f9;
+  margin: 0;
+  padding: 20px;
+}
+
+.dashboard-container {
+  display: flex;
+  max-width: 1400px;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+.dashboard {
+  flex: 1;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  padding: 20px;
+}
+
+h2, h3 {
+  color: #2c3e50;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+}
+
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filtros label {
+  font-weight: bold;
+}
+
+.filtros input[type="date"] {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.filtros button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.filtros button:hover {
+  background-color: #2980b9;
+}
+
+.citas {
+  list-style-type: none;
+  padding: 0;
+}
+
+.citas li {
+  background-color: #ecf0f1;
+  margin-bottom: 15px;
+  padding: 15px;
+  border-radius: 6px;
+  transition: transform 0.2s;
+}
+
+.citas li:hover {
+  transform: translateY(-3px);
+}
+
+.citas li.pendiente {
+  border-left: 5px solid #e74c3c;
+}
+
+.citas li.confirmada {
+  border-left: 5px solid #2ecc71;
+}
+
+.citas button {
+  margin-top: 10px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.citas button:first-of-type {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.citas button:first-of-type:hover {
+  background-color: #27ae60;
+}
+
+.ver-historial-btn {
+  background-color: #3498db;
+  color: white;
+}
+
+.ver-historial-btn:hover {
+  background-color: #2980b9;
+}
+
+.finalizar-cita {
+  flex: 0 0 400px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  align-self: flex-start;
+  position: sticky;
+  top: 20px;
+}
+
+.finalizar-cita form div {
+  margin-bottom: 20px;
+}
+
+.finalizar-cita label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.finalizar-cita textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  resize: vertical;
+  min-height: 100px;
+}
+
+.finalizar-cita button[type="submit"] {
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 16px;
+}
+
+.finalizar-cita button[type="submit"]:hover {
+  background-color: #27ae60;
+}
+
+.modal-backdrop {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .dashboard-container {
+    flex-direction: column;
+  }
+
+  .finalizar-cita {
+    flex: none;
+    width: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    max-width: 95%;
+    max-height: 95vh;
+    overflow-y: auto;
+  }
+
+  .modal-backdrop {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 10px;
+  }
+
+  .filtros {
+    flex-direction: column;
+  }
+
+  .filtros input[type="date"],
+  .filtros button {
+    width: 100%;
+  }
+
+  .citas li {
+    padding: 10px;
+  }
+}
